@@ -6,6 +6,7 @@ import reactIcon from '../assets/react.jpeg';
 import pythonIcon from '../assets/python.png';
 import djangoIcon from '../assets/django.jpeg';
 import jsIcon from '../assets/javascript1.png';
+import '../App.css';
 
 const Home = () => {
   const [typingText, setTypingText] = useState('');

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiSend } from 'react-icons/fi';
+import '../App.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

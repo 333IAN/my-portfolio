@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaCode, FaServer, FaDatabase } from 'react-icons/fa';
+import '../App.css';
+
 
 const About = () => (
   <section id="about" className="about-section">
