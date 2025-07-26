@@ -403,3 +403,272 @@ body::before {
   order: -1;
   }
 }
+
+/*About*/
+/* Base Styles */
+.about-section {
+  padding: 3rem 1rem;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #8b5cf6;
+}
+
+/* Header Styles */
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.header-accent {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 0.25rem;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border-radius: 0.25rem;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #94a3b8;
+}
+
+.role {
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.location {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.location::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+}
+
+/* Bio Section */
+.bio-card {
+  background: #1e293b;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-left: 4px solid #8b5cf6;
+}
+
+.bio-content p {
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title span {
+  color: #8b5cf6;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 0.25rem;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border-radius: 0.25rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #334155;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #8b5cf6;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.skill-icon {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Skill Icon Colors */
+.react { color: #61dafb; }
+.javascript { color: #f7df1e; }
+.django { color: #092e20; }
+.postgres { color: #336791; }
+.mysql { color: #4479a1; }
+.htmlcss { 
+  background: #e34f26;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+}
+.python { color: #3776ab; }
+.api { color: #8b5cf6; }
+.architecture { color: #94a3b8; }
+
+/* Principles Section */
+.principles-section {
+  margin-bottom: 2rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.principle {
+  background: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.principle-icon {
+  font-size: 1.75rem;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+}
+
+.principle h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+}
+
+.principle p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Golang Icon Styling */
+.golang {
+  color: #00ADD8; /* Golang brand blue */
+}
+
+/* PHP Icon Styling */
+.php {
+  color: #777BB4; /* PHP brand purple */
+}
+
+/* Django REST Icon Styling */
+.django {
+  color: #092E20; /* Django brand green */
+}
+
+/* Adjust the skill-list items for additional backend items */
+.skill-card.backend .skill-list li {
+  padding: 0.4rem 0; /* Slightly reduced padding to fit more items */
+}

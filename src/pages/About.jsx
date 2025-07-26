@@ -1,68 +1,156 @@
 import React from 'react';
-import { FaCode, FaServer, FaDatabase } from 'react-icons/fa';
+import { FaCode, FaServer, FaDatabase, FaShieldAlt, FaUserCog } from 'react-icons/fa';
+import { SiDjango, SiPostgresql, SiMysql, SiJavascript, SiReact, SiGo, SiPhp } from 'react-icons/si';
 import '../App.css';
-
 
 const About = () => (
   <section id="about" className="about-section">
-    <div className="container">
-      <h1>About Me</h1>
-      <p className="section-subtitle">Get to know me better</p>
+    <div className="about-container">
       
-      <div className="about-content">
-        <div className="about-text">
-          <p>
-            I'm a passionate Full Stack Developer based in Nairobi, Kenya, specializing in building 
-            modern web applications with Django and React. With a strong foundation in both frontend 
-            and backend technologies, I create seamless, scalable solutions.
+      {/* Enhanced Header */}
+      <header className="about-header">
+        <div className="header-accent"></div>
+        <h1>
+          <span className="highlight">Professional</span> Profile
+        </h1>
+        <p className="subtitle">
+          <span className="role">Full Stack Developer</span>
+          <span className="location">Nairobi, Kenya</span>
+        </p>
+      </header>
+
+      {/* Refined Bio Section */}
+      <article className="bio-card">
+        <div className="bio-content">
+          <p className="lead">
+            I specialize in building <strong>scalable web applications</strong> with modern 
+            architectures, focusing on both technical excellence and user experience.
           </p>
           <p>
-            My journey in web development started 3 years ago, and since then I've worked on various 
-            projects ranging from simple websites to complex web applications. I'm constantly learning 
-            new technologies and best practices to improve my craft.
+            With over 3 years of professional experience, I've successfully delivered 
+            projects ranging from startup MVPs to enterprise solutions, always emphasizing 
+            clean code and maintainable systems.
           </p>
         </div>
+      </article>
+
+      {/* Improved Skills Section */}
+      <section className="skills-section">
+        <h2 className="section-title">
+          <span>Technical</span> Expertise
+        </h2>
         
-        <div className="skills-container">
-          <div className="skill-card">
-            <div className="skill-icon">
-              <FaCode className="text-primary text-3xl" />
-            </div>
-            <h3>Frontend</h3>
-            <p><ul>
-                    <li>React</li>
-                    <li>Javascript</li>
-                    <li>Tailwind CSS</li>
-                    <li>CSS3</li>
-                    <li>HTML5</li>
-                </ul>
-            </p>
-          </div>
+        <div className="skills-grid">
           
-          <div className="skill-card">
-            <div className="skill-icon">
-              <FaServer className="text-primary text-3xl" />
+          <div className="skill-card frontend">
+            <div className="card-header">
+              <FaCode className="card-icon" />
+              <h3>Frontend</h3>
             </div>
-            <h3>Backend</h3>
-            <p>
-                <ul>
-                    <li>DjangoRest</li>
-                    <li>PHP</li>
-                    <li>Python</li>
-                    <li>Node.JS</li>
-               </ul>
-            </p>
+            <ul className="skill-list">
+              <li>
+                <SiReact className="skill-icon react" />
+                <span>React.js</span>
+              </li>
+              <li>
+                <SiJavascript className="skill-icon javascript" />
+                <span>JavaScript (ES6+)</span>
+              </li>
+              <li>
+                <div className="skill-icon htmlcss">{"</>"}</div>
+                <span>HTML5/CSS3</span>
+              </li>
+            </ul>
           </div>
-          
-          <div className="skill-card">
-            <div className="skill-icon">
-              <FaDatabase className="text-primary text-3xl" />
+
+          <div className="skill-card backend">
+            <div className="card-header">
+              <FaServer className="card-icon" />
+              <h3>Backend</h3>
             </div>
-            <h3>Database</h3>
-            <p>PostgreSQL, MySQL</p>
+            <ul className="skill-list">
+              <li>
+                <SiDjango className="skill-icon django" />
+                <span>Django REST</span>
+              </li>
+              <li>
+                <SiGo className="skill-icon golang" />
+                <span>Golang</span>
+              </li>
+              <li>
+                <SiPhp className="skill-icon php" />
+                <span>PHP</span>
+              </li>
+              <li>
+                <FaDatabase className="skill-icon api" />
+                <span>API Design</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="skill-card database">
+            <div className="card-header">
+              <FaDatabase className="card-icon" />
+              <h3>Database</h3>
+            </div>
+            <ul className="skill-list">
+              <li>
+                <SiPostgresql className="skill-icon postgres" />
+                <span>PostgreSQL</span>
+              </li>
+              <li>
+                <SiMysql className="skill-icon mysql" />
+                <span>MySQL</span>
+              </li>
+              <li>
+                <FaDatabase className="skill-icon architecture" />
+                <span>Database Architecture</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Enhanced Principles Section */}
+      <section className="principles-section">
+        <h2 className="section-title">
+          <span>Development</span> Principles
+        </h2>
+        
+        <div className="principles-grid">
+          <div className="principle">
+            <div className="principle-icon">
+              <FaCode />
+            </div>
+            <h3>Code Quality</h3>
+            <p>Clean, documented, and maintainable codebase</p>
+          </div>
+          
+          <div className="principle">
+            <div className="principle-icon">
+              <FaServer />
+            </div>
+            <h3>Performance</h3>
+            <p>Optimized solutions built to scale</p>
+          </div>
+          
+          <div className="principle">
+            <div className="principle-icon">
+              <FaShieldAlt />
+            </div>
+            <h3>Security</h3>
+            <p>Industry-standard security practices</p>
+          </div>
+          
+          <div className="principle">
+            <div className="principle-icon">
+              <FaUserCog />
+            </div>
+            <h3>User Focus</h3>
+            <p>Intuitive and accessible interfaces</p>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 );
