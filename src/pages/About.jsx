@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaCode, FaServer, FaDatabase, FaShieldAlt, FaUserCog } from 'react-icons/fa';
-import { SiDjango, SiPostgresql, SiMysql, SiJavascript, SiReact, SiGo, SiPhp } from 'react-icons/si';
-import '../App.css';
+import { SiDjango, SiPostgresql, SiMysql, SiJavascript, SiReact, SiGo, SiPhp, SiNodedotjs } from 'react-icons/si';
+import '../App';
 
 const About = () => (
   <section id="about" className="about-section">
     <div className="about-container">
       
-      {/* Enhanced Header */}
+      {/* Header remains the same */}
       <header className="about-header">
         <div className="header-accent"></div>
         <h1>
@@ -19,7 +19,7 @@ const About = () => (
         </p>
       </header>
 
-      {/* Refined Bio Section */}
+      {/* Bio section remains the same */}
       <article className="bio-card">
         <div className="bio-content">
           <p className="lead">
@@ -27,14 +27,14 @@ const About = () => (
             architectures, focusing on both technical excellence and user experience.
           </p>
           <p>
-            With over 3 years of professional experience, I've successfully delivered 
-            projects ranging from startup MVPs to enterprise solutions, always emphasizing 
+            With 2 years of experience, I've successfully delivered 
+            projects ranging from startup websites to enterprise solutions, always emphasizing 
             clean code and maintainable systems.
           </p>
         </div>
       </article>
 
-      {/* Improved Skills Section */}
+      {/* Updated Skills Section with Node.js */}
       <section className="skills-section">
         <h2 className="section-title">
           <span>Technical</span> Expertise
@@ -42,6 +42,7 @@ const About = () => (
         
         <div className="skills-grid">
           
+          {/* Frontend card remains the same */}
           <div className="skill-card frontend">
             <div className="card-header">
               <FaCode className="card-icon" />
@@ -50,7 +51,7 @@ const About = () => (
             <ul className="skill-list">
               <li>
                 <SiReact className="skill-icon react" />
-                <span>React.js</span>
+                <span>React JS</span>
               </li>
               <li>
                 <SiJavascript className="skill-icon javascript" />
@@ -63,6 +64,7 @@ const About = () => (
             </ul>
           </div>
 
+          {/* Updated Backend card with Node.js */}
           <div className="skill-card backend">
             <div className="card-header">
               <FaServer className="card-icon" />
@@ -82,12 +84,17 @@ const About = () => (
                 <span>PHP</span>
               </li>
               <li>
+                <SiNodedotjs className="skill-icon nodejs" />
+                <span>Node JS</span>
+              </li>
+              <li>
                 <FaDatabase className="skill-icon api" />
                 <span>API Design</span>
               </li>
             </ul>
           </div>
 
+          {/* Database card remains the same */}
           <div className="skill-card database">
             <div className="card-header">
               <FaDatabase className="card-icon" />
@@ -111,7 +118,7 @@ const About = () => (
         </div>
       </section>
 
-      {/* Enhanced Principles Section */}
+      {/* Principles section remains the same */}
       <section className="principles-section">
         <h2 className="section-title">
           <span>Development</span> Principles

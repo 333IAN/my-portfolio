@@ -672,3 +672,14 @@ h1, h2, h3 {
 .skill-card.backend .skill-list li {
   padding: 0.4rem 0; /* Slightly reduced padding to fit more items */
 }
+
+/* Node.js Icon Styling */
+.nodejs {
+  color: #339933; /* Node.js brand green */
+}
+
+/* Adjust the backend card layout for additional items */
+.skill-card.backend .skill-list li {
+  padding: 0.35rem 0; /* Slightly reduced padding to fit all items */
+  font-size: 0.95rem; /* Optional: slightly smaller font if needed */
+}
