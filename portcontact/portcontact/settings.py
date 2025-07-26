@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%3#7f13+88yx*f)$g94%@e1y2obc#s63nm-^=%@8(7c5&41sy@'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG','False').lower()=='true'
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -45,11 +50,11 @@ INSTALLED_APPS = [
 DATABASES ={
     'default': {
         'ENGINE':'django.db.backends.postgresgl',
-        'NAME':'portfolio',
-        'USER':'postgres',
-        'PASSWORD':'0987654321',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'NAME':os.getenv('DB_NAME'),
+        'USER':os.getenv('DB_USER'),
+        'PASSWORD':os.getenv('DB_PASSWORD'),
+        'HOST':os.getenv('DB_HOST'),
+        'PORT':os.getenv('DB_PORT'),
     }
 }
 
@@ -68,12 +73,12 @@ CORS_ALLOW_ALL_ORIGINS=True
 ROOT_URLCONF = 'portcontact.urls'
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER='amuguneisavwa@gmail.com'
-EMAIL_HOST_PASSWORD='fivezerofourtwo5042'
-DEFAULT_FROM_EMAIL=EMAIL_HOST_USER
+EMAIL_HOST=os.getenv('EMAIL_HOST')
+EMAIL_PORT=os.getenv('EMAIL_PORT')
+EMAIL_USE_TLS=os.getenv('EMAIL_USE_TLS', 'True').lower()=='true'
+EMAIL_HOST_USER=os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.getenv('EMAIL_HOST_PASWWORD')
+DEFAULT_FROM_EMAIL=os.getenv('DEFAULT_FROM_EMAIL')
 
 TEMPLATES = [
     {

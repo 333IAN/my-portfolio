@@ -2,7 +2,7 @@
 /node_modules 
 /.pnp 
 .pnp.js 
- 
+
 # production 
 /build 
  
@@ -35,3 +35,6 @@ db.sqlite3
 staticfiles/
 media/
 
+#Database
+*.sqlite3
+*.db
