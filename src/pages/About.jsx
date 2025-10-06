@@ -7,29 +7,48 @@ const About = () => (
   <section id="about" className="about-section">
     <div className="about-container">
       
-      {/* Header remains the same */}
       <header className="about-header">
         <div className="header-accent"></div>
         <h1>
-          <span className="highlight">Professional</span> Profile
+          <span className="highlight">My</span> Journey
         </h1>
         <p className="subtitle">
-          <span className="role">Full Stack Developer</span>
-          <span className="location">Nairobi, Kenya</span>
+          <span className="role">Cloud Specialist & Developer</span>
+          <span className="location">Building Digital Solutions</span>
         </p>
       </header>
 
-      {/* Bio section remains the same */}
       <article className="bio-card">
         <div className="bio-content">
           <p className="lead">
-            I specialize in building <strong>scalable web applications</strong> with modern 
-            architectures, focusing on both technical excellence and user experience.
+            Transforming ideas into efficient digital solutions through cloud engineering and full-stack development.
           </p>
+          
           <p>
-            With 2 years of experience, I've successfully delivered 
-            projects ranging from startup websites to enterprise solutions, always emphasizing 
-            clean code and maintainable systems.
+            With <strong>2 years of professional experience</strong>, I've been crafting solutions that bridge 
+            the gap between cloud infrastructure and user-facing applications. At <strong>Pawa IT Solutions</strong>, 
+            I specialize in Google Cloud Platform implementations, engineering robust software architectures, 
+            and creating automation systems that streamline business operations.
+          </p>
+          
+          <p>
+            My technical arsenal includes <strong>Django and Python</strong> for building powerful backends, 
+            <strong> React and JavaScript</strong> for creating dynamic user interfaces, and extensive experience 
+            with <strong>Google Workspace administration</strong> and <strong>Google Apps Script</strong> for 
+            workflow automation and productivity enhancement.
+          </p>
+          
+          <p>
+            As a dedicated student of technology, I combine academic learning with practical application, 
+            constantly expanding my skills in software development, cloud solutions, and modern web technologies. 
+            This dual perspective allows me to approach problems with both theoretical understanding and 
+            real-world implementation experience.
+          </p>
+          
+          <p>
+            I'm passionate about creating solutions that are not just technically sound but also deliver 
+            tangible value—whether it's through optimized cloud infrastructure, efficient automation scripts, 
+            or user-friendly web applications.
           </p>
         </div>
       </article>

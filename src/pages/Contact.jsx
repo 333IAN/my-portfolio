@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FiSend } from 'react-icons/fi';
 import '../App.css';
 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,17 +18,39 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
+
+
+  // In your Contact.jsx - update the handleSubmit function
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/contact/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    if (response.ok) {
+      const data = await response.json();
+      alert(data.message || 'Message sent successfully! I will get back to you soon.');
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } else {
+      const errorData = await response.json();
+      alert(errorData.errors || 'Failed to send message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Network error. Please check if the backend server is running.');
+  }
+};
 
   return (
     <section id="contact" className="contact-section">
