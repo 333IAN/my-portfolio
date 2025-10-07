@@ -44,10 +44,12 @@ MIDDLEWARE = [
 ]
 
 # Database - Production ready
+# Update DATABASES configuration
 DATABASES = {
     'default': dj_database_url.config(
         default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
-        conn_max_age=600
+        conn_max_age=600,
+        ssl_require=not DEBUG  # Add SSL for production
     )
 }
 
@@ -75,4 +77,37 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
 # Rest of your settings...
 ROOT_URLCONF = 'portcontact.urls'
 WSGI_APPLICATION = 'portcontact.wsgi.application'
-# ... etc
+
+# Add these to your settings.py:
+
+# Security settings
+SECURE_SSL_REDIRECT = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
+# Template settings (if you have any)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+# Internationalization
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
+
+# Static files for production
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # if you have additional static dirs
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
