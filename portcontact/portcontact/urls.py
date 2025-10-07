@@ -16,9 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
 
+
+def check_env_vars(request):
+    """Check if environment variables are loaded correctly"""
+    import os
+    return JsonResponse({
+        "EMAIL_HOST": os.getenv('EMAIL_HOST', 'NOT SET'),
+        "EMAIL_HOST_USER": os.getenv('EMAIL_HOST_USER', 'NOT SET'),
+        "EMAIL_HOST_PASSWORD": "SET" if os.getenv('EMAIL_HOST_PASSWORD') else "NOT SET",
+        "DEFAULT_FROM_EMAIL": os.getenv('DEFAULT_FROM_EMAIL', 'NOT SET'),
+        "RAILWAY_ENVIRONMENT": os.getenv('RAILWAY_ENVIRONMENT', 'NOT SET'),
+    })
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("check-env/", check_env_vars),  # Endpoint to check env vars
     path("api/", include("contactapp.urls")),
 ]
