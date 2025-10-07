@@ -1,10 +1,10 @@
 from rest_framework import status
 from .serializers import ContactSerializer
-from django.core.mail import send_mail
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.conf import settings
 import logging
+from .tasks import send_contact_email_async  # Add this import
 
 logger = logging.getLogger(__name__)
 
@@ -16,30 +16,34 @@ class ContactCreateView(APIView):
         if serializer.is_valid():
             contact = serializer.save()
             
-            # Send email notification
+            # Prepare email data
+            email_data = {
+                'name': contact.name,
+                'email': contact.email,
+                'message': contact.message,
+                'sent_at': str(contact.sent_at)
+            }
+            
+            # Send email in background thread
             try:
-                send_mail(
-                    subject=f"New Portfolio Contact from {contact.name}",
-                    message=f"""
-Name: {contact.name}
-Email: {contact.email}
-Message: {contact.message}
-
-Sent at: {contact.sent_at}
-                    """.strip(),
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.EMAIL_HOST_USER],  # Sends to yourself
-                    fail_silently=False,
+                email_thread = threading.Thread(
+                    target=send_contact_email_async,
+                    args=(email_data,)
                 )
-                logger.info(f"Contact form submitted and email sent: {contact.email}")
-                
+                email_thread.daemon = True
+                email_thread.start()
+                logger.info(f"Contact submitted, email queued: {contact.email}")
+                email_sent = True
             except Exception as e:
-                logger.error(f"Email sending failed: {str(e)}")
-                # Still save the contact even if email fails
-                # You can implement a retry mechanism or use Celery for async emails
+                logger.error(f"Failed to queue email: {str(e)}")
+                email_sent = False
             
             return Response(
-                {"message": "Thank you for your message! I'll get back to you soon.", "data": serializer.data},
+                {
+                    "message": "Thank you for your message! I'll get back to you soon.",
+                    "data": serializer.data,
+                    "email_queued": email_sent
+                },
                 status=status.HTTP_201_CREATED
             )
         
