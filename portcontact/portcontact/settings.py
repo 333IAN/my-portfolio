@@ -45,14 +45,25 @@ MIDDLEWARE = [
 
 # Database - Production ready
 # Update DATABASES configuration
-DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
-        conn_max_age=600,
-        ssl_require=not DEBUG  # Add SSL for production
-    )
-}
-
+# Database - Production ready
+DATABASE_URL = os.getenv('DATABASE_URL')
+if DATABASE_URL:
+    # Production - PostgreSQL with SSL
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    # Development - SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 # Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
