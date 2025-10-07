@@ -3,7 +3,7 @@ import { FiSend } from 'react-icons/fi';
 import '../App.css';
 
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://my-portfolio-us.up.railway.app/api/contact/';
+const API_BASE_URL ='https://my-portfolio-us.up.railway.app/api/contact/';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',

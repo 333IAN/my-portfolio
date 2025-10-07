@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key-for-dev')
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = ['my-portfolio-us.up.railway.app', 'localhost', '127.0.0.1', '.railway.app']
 
 # Applications
 INSTALLED_APPS = [
@@ -120,5 +121,15 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files for production
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # if you have additional static dirs
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CSRF and Session settings for Railway
+CSRF_TRUSTED_ORIGINS = [
+    'https://my-portfolio-us.up.railway.app',
+    'https://*.up.railway.app',
+    'https://*.railway.app',
+]
+
+# Security settings
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
