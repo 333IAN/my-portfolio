@@ -71,7 +71,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://your-portfolio.vercel.app",
+    "https://my-portfolio-eta-henna-19.vercel.app",
     "http://localhost:3000",
     "http://localhost:5173",  # Vite dev server
 ]
