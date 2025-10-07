@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import JsonResponse
+import logging
+logger = logging.getLogger(__name__)
+import smtplib
+from email.mime.text import MIMEText
 
 
 def check_env_vars(request):
@@ -29,6 +33,37 @@ def check_env_vars(request):
         "DEFAULT_FROM_EMAIL": os.getenv('DEFAULT_FROM_EMAIL', 'NOT SET'),
         "RAILWAY_ENVIRONMENT": os.getenv('RAILWAY_ENVIRONMENT', 'NOT SET'),
     })
+
+# Add to urls.py
+def simple_email_test(request):
+    """Simple email test without Django's send_mail"""
+    try:
+        import smtplib
+        from email.mime.text import MIMEText
+        
+        logger.info("🚀 SIMPLE SMTP TEST STARTING")
+        
+        # Connect to Resend
+        server = smtplib.SMTP('smtp.resend.com', 587)
+        server.starttls()
+        server.login('resend', 'your_resend_api_key_here')  # Use your actual API key
+        
+        # Create message
+        msg = MIMEText('This is a simple SMTP test')
+        msg['Subject'] = 'SIMPLE RESEND TEST'
+        msg['From'] = 'onboarding@resend.dev'
+        msg['To'] = 'amuguneisavwa@gmail.com'
+        
+        # Send
+        server.sendmail('onboarding@resend.dev', ['amuguneisavwa@gmail.com'], msg.as_string())
+        server.quit()
+        
+        logger.info("✅ SIMPLE SMTP TEST SUCCESS")
+        return JsonResponse({"status": "Simple SMTP test passed"})
+        
+    except Exception as e:
+        logger.error(f"❌ SIMPLE SMTP TEST FAILED: {str(e)}")
+        return JsonResponse({"error": str(e)}, status=500)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
