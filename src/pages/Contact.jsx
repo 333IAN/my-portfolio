@@ -3,7 +3,13 @@ import { FiSend } from 'react-icons/fi';
 import '../App.css';
 
 
-const API_BASE_URL ='https://my-portfolio-us.up.railway.app/api/contact/';
+
+axios.post(`${API_BASE_URL}/api/contact/`, {
+  name: formData.name,
+  email: formData.email,
+  message: formData.message
+})
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +31,8 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   
   try {
-    const response = await fetch(`${API_BASE_URL}/api/contact/`, {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    const response = await fetch(`${apiUrl}/api/contact/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
