@@ -1,0 +1,40 @@
+# dependencies 
+/node_modules 
+/.pnp 
+.pnp.js 
+
+# production 
+/build 
+ 
+# misc 
+.DS_Store 
+.env.local 
+.env.development.local 
+.env.test.local 
+.env.production.local 
+
+# General
+*.env
+*.log
+*.sqlite3
+*.pyc
+__pycache__/
+.vscode/
+.DS_Store
+
+# Node.js / React
+node_modules/
+build/
+dist/
+.env.local
+.env.production
+
+# Python / Django
+db.sqlite3
+*.py[cod]
+staticfiles/
+media/
+
+#Database
+*.sqlite3
+*.db
