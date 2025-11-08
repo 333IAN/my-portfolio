@@ -7,7 +7,7 @@ import pythonIcon from '../assets/python.png';
 import djangoIcon from '../assets/django.jpeg';
 import jsIcon from '../assets/javascript1.png';
 import '../App.css';
-import cvFile from '../assets/isavwaCV.docx';
+import cvFile from '../assets/isavwaCV.docx?url';
 
 const Home = () => {
   const [typingText, setTypingText] = useState('');
