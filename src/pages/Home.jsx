@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiDownload } from 'react-icons/fi';
-import profileImage from '/assets/isavwaprofile.jpg';
-import reactIcon from '/assets/react.jpeg';
-import pythonIcon from '/assets/python.png';
-import djangoIcon from '/assets/django.jpeg';
-import jsIcon from '/assets/javascript1.png';
+import profileImage from '../assets/isavwaprofile.jpg';
+import reactIcon from '../assets/react.jpeg';
+import pythonIcon from '../assets/python.png';
+import djangoIcon from '../assets/django.jpeg';
+import jsIcon from '../assets/javascript1.png';
 import '../App.css';
+import cvFile from '../assets/isavwaCV.docx';
 
 const Home = () => {
   const [typingText, setTypingText] = useState('');
@@ -112,8 +113,8 @@ const Home = () => {
               <FiMail /> Contact Me
             </a>
             <a 
-              href="/isavwaCV.docx" 
-              download
+              href={cvFile}
+              download="isavwaCV.docx"
               className="btn btn-outline"
             >
               <FiDownload /> Download CV
