@@ -1,69 +1,97 @@
-# React + TypeScript + Vite
+# Ian Isavwa's Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for my personal portfolio website. This is a single-page application built from scratch to showcase my skills, projects, and professional background.
 
-Currently, two official plugins are available:
+**Visit the live site: [https://333ian.github.io/my-portfolio/](https://333ian.github.io/my-portfolio/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📸 Project Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This portfolio is a modern React application built with Vite. It's designed to be a clean, single-page, and smooth-scrolling experience for visitors. It features an animated "sparkly" background, a dynamic typing effect, and several sections including:
+* **Home:** An introduction with a typing animation and links to my CV and social profiles.
+* **About:** A detailed summary of my professional experience and a breakdown of my technical skills.
+* **Projects:** A grid of my recent work, complete with descriptions, tech stacks, and links to the code.
+* **Contact:** A fully functional contact form that sends me an email.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This repository contains the **React frontend**. The functional contact form is powered by a separate **Django REST Framework API** that I built and host on Railway.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ✨ Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* **Single-Page Application:** Smooth scrolling navigation to all sections.
+* **Dynamic UI:** Built with `framer-motion` for fluid animations and page transitions.
+* **Live Contact Form:** Connects to a custom-built Python/Django backend API to handle and forward messages.
+* **Project Showcase:** A clean, card-based layout for my projects, complete with key features and GitHub links.
+* **CV Viewer:** Allows visitors to view my CV (as a PDF) directly in their browser.
+* **Responsive Design:** Fully responsive for mobile, tablet, and desktop.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Technology Stack
+
+This project is split into two main parts: the frontend (this repository) and the backend API.
+
+### Frontend (GitHub Pages)
+
+* **Framework:** React
+* **Build Tool:** Vite
+* **Language:** JavaScript (ES6+)
+* **Styling:** Plain CSS (with CSS Variables)
+* **Animation:** Framer Motion
+* **Icons:** React Icons
+* **Deployment:** GitHub Pages
+
+### Backend (Railway)
+
+* **Framework:** Django & Django REST Framework
+* **Language:** Python
+* **Database:** PostgreSQL
+* **CORS:** `django-cors-headers` (to allow the frontend to make requests)
+* **Server:** Gunicorn
+* **Deployment:** Railway
+
+---
+
+## 🚀 How to Run This Project Locally
+
+To run the frontend for development:
+
+1.  **Clone this repository:**
+    ```bash
+    git clone https://github.com/333ian/my-portfolio.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd my-portfolio
+    ```
+3.  **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+This will start the app on `http://localhost:5173`.
+
+**Note:** For the contact form to work locally, you must create a `.env` file in the root of this project and add your backend API URL, like this:
+`VITE_API_BASE_URL=https://your-api-url.railway.app`
+
+---
+
+## 🔄 How to Update the Live Site
+
+I've set up an easy workflow using `gh-pages` to update the live site.
+
+1.  **Make your code changes** (e.g., in the `src/` folder).
+2.  **Build the site:** This creates an updated `dist` folder.
+    ```bash
+    npm run build
+    ```
+3.  **Deploy the build:** This command pushes the `dist` folder to the `gh-pages` branch, which automatically updates your live website.
+    ```bash
+    npm run deploy
+    ```
+4.  Wait 1-2 minutes and see the changes!
