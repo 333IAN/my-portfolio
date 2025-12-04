@@ -7,6 +7,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Header from './components/Header';
+import Certifications from './pages/Certifications'; 
 import React from 'react';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <main className="main-content">
         <Home />
         <About />
+        <Certifications />
         <Projects />
         <Contact />
       </main>

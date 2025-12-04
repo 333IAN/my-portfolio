@@ -106,17 +106,18 @@ const Home = () => {
           
           <motion.div className="cta-buttons" variants={itemVariants}>
             <a 
-              href="contact" 
+              href="#contact" 
               className="btn btn-primary"
             >
               <FiMail /> Contact Me
             </a>
             <a 
-              href="/isavwaCV.docx"
-              download="isavwaCV.docx"
+              href="IsavwaCV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline"
             >
-              <FiDownload /> Download CV
+              <FiDownload /> View CV
             </a>
           </motion.div>
           
@@ -124,7 +125,7 @@ const Home = () => {
             <a href="https://github.com/333IAN" target="_blank" rel="noopener noreferrer" className="social-link">
               <FiGithub />
             </a>
-            <a href="https://www.linkedin.com/in/ian-isavwa" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/ian-isavwa-0510b9385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank" rel="noopener noreferrer" className="social-link">
               <FiLinkedin />
             </a>
           </motion.div>

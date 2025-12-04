@@ -3,13 +3,6 @@ import { FiSend } from 'react-icons/fi';
 import '../App.css';
 
 
-
-axios.post(`${API_BASE_URL}/api/contact/`, {
-  name: formData.name,
-  email: formData.email,
-  message: formData.message
-})
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
