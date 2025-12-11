@@ -1234,100 +1234,106 @@ h1, h2, h3 {
   from { background-position: 0 0; }
   to { background-position: 100px 100px; }
 }
-
-
-/* Certifications Section */
+/* --- Certifications "Pawa IT" Style --- */
 .certifications-section {
-  padding: 6rem 2rem;
-  background-color: rgba(15, 23, 42, 0.5); /* Slightly different shade for separation */
+  padding: 4rem 2rem;
+  background-color: var(--dark);
+  text-align: center;
 }
 
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.cert-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; 
+  margin-top: 2rem;
 }
 
-.cert-card {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(108, 99, 255, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
+/* The Badge Container */
+.cert-item {
+  position: relative; 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.cert-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.cert-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary);
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
-
-.cert-card:hover::before {
-  opacity: 1;
-}
-
-.cert-icon-wrapper {
-  font-size: 2.5rem;
-  color: var(--primary);
-  background: rgba(108, 99, 255, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
-}
-
-.cert-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-}
-
-.cert-meta {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cert-description {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.cert-link {
-  margin-top: auto;
-  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--primary);
-  font-weight: 600;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  cursor: pointer;
 }
 
-.cert-link:hover {
-  color: #fff;
-  text-decoration: underline;
+/* The White Circle/Box Background */
+.cert-circle {
+  /* INCREASED SIZE: From 130px to 180px for better readability */
+  width: 180px;
+  height: 180px;
+  background-color: #ffffff; 
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cert-item:hover .cert-circle {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* The Badge Image */
+.cert-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* --- The Pop-up Title (Tooltip) --- */
+.cert-tooltip {
+  position: absolute;
+  bottom: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* NO BACKGROUND - Just Text */
+  background-color: transparent; 
+  color: white;
+  
+  /* Make text larger and bold to stand out */
+  font-size: 0.8rem; 
+  font-weight: 400;
+  white-space: nowrap;
+  
+  /* Add a shadow so it reads clearly on any background */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show Tooltip on Hover */
+.cert-item:hover .cert-tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: -50px; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .cert-gallery {
+    gap: 1.5rem;
+  }
+  
+  .cert-circle {
+    /* Slightly smaller on mobile, but still readable */
+    width: 140px;
+    height: 140px;
+    padding: 1rem;
+  }
+  
+  .cert-tooltip {
+    font-size: 0.9rem;
+  }
 }
