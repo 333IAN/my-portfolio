@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Header from './components/Header';
-import Certifications from './pages/Certifications'; 
-import React from 'react';
+import Certifications from './pages/Certifications';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +24,7 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
-export default App
+
+export default App;

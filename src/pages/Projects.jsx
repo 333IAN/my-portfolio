@@ -11,6 +11,27 @@ const projects = [
     features: ["Automated order placement", "Email notifications", "User-friendly interface"],
   },
   {
+    title: "Personal Portfolio Website",
+    description: "A sleek and modern personal portfolio website to showcase my projects and skills.",
+    tech: ["React", "CSS", "JavaScript","Django"],
+    codeLink: "https://github.com/333IAN/my-portfolio",
+    features: ["Responsive design", "Project showcase", "Contact form integration"],
+  },
+  {
+    title: "Task Management App",
+    description: "A serverless automation bot built with Google Apps Script. Uses precise cron-based triggers to send actionable Friday/Sunday planning reminders with direct links to task dashboards.",
+    tech: ["Google Apps Script", "cron-jobs", "Javascript", "HTML"],
+    codeLink: "https://github.com/333IAN/weekly-planning-bot",
+    features: ["User authentication", "Task creation and editing", "Task tracking and filtering"],
+  },
+  {
+    title: "DRF Task API",
+    description: "A RESTful API for managing people, houses, tasks and permissions built with Django REST Framework.",
+    tech: ["Django REST Framework", "Python", "Storage-api"," PostgreSQL", "Google Clud Storage"],
+    codeLink: "https://github.com/333IAN/taskful-api",
+    features: ["CRUD operations", "User authentication", "Permission management"],
+  },
+  {
     title: "Wamunyiri Website",
     description: "Modern responsive website with animated UI elements built with Flask and SQLAlchemy",
     tech: ["Python", "Flask", "SQLAlchemy", "JavaScript"],

@@ -29,56 +29,49 @@ import wtroublesBadge from '../assets/WorkspaceTroubleshooting.jpg';
 const certifications = [
   {
     title: "AppScript + AppSheet",
-    image: scriptCert,
-    link: "https://your-credential-link.com" 
+    image: scriptCert, 
   },
   {
     title: "Generative AI",
     image: genaiCert,
-    link: "https://your-credential-link.com"
   },
   {
     title: "Google Drive",
     image: driveCert,
-    link: "#"
   },
   {
-    title: "Gmail Certification",
+    title: "Google Gmail",
     image: gmailCert,
-    link: "#"
   },
   {
     title: "Google Calendar",
     image: calenderCert,
-    link: "#"
   },
   {
     title: "Javascript Strings",
     image: jsCert,
-    link: "#"
   },
   {
     title: "Python 3 Turtle",
     image: pythonCert,
-    link: "#"
   },
   // --- BADGES ---
-  { title: "Gemini for Workspace", image: geminiBadge, link: "#" },
-  { title: "Gmail Badge", image: gmailBadge, link: "#" },
-  { title: "Google Calendar Badge", image: calenderBadge, link: "#" },
-  { title: "Google Chat", image: chatBadge, link: "#" },
-  { title: "Google Docs", image: docsBadge, link: "#" },
-  { title: "Google Drive Badge", image: driveBadge, link: "#" },
-  { title: "Google Meet", image: meetBadge, link: "#" },
-  { title: "Google Sheets", image: sheetsBadge, link: "#" },
-  { title: "Google Slides", image: slidesBadge, link: "#" },
-  { title: "Sheets Advanced", image: sheetsadvBadge, link: "#" },
-  { title: "Sheets Functions", image: sheetsfxnBadge, link: "#" },
-  { title: "Workspace Core Services", image: wcoresBadge, link: "#" },
-  { title: "Data Governance", image: wdatagBadge, link: "#" },
-  { title: "Workspace Security", image: wsecBadge, link: "#" },
-  { title: "User & Resource Mgmt", image: wusernresourceBadge, link: "#" },
-  { title: "Troubleshooting", image: wtroublesBadge, link: "#" }
+  { title: "Gemini for Workspace", image: geminiBadge},
+  { title: "Google Gmail", image: gmailBadge},
+  { title: "Google Calendar", image: calenderBadge},
+  { title: "Google Chat", image: chatBadge},
+  { title: "Google Docs", image: docsBadge},
+  { title: "Google Drive", image: driveBadge},
+  { title: "Google Meet", image: meetBadge},
+  { title: "Google Sheets", image: sheetsBadge},
+  { title: "Google Slides", image: slidesBadge},
+  { title: "Sheets Advanced", image: sheetsadvBadge},
+  { title: "Sheets Functions", image: sheetsfxnBadge},
+  { title: "Workspace Core Services", image: wcoresBadge},
+  { title: "Data Governance", image: wdatagBadge},
+  { title: "Workspace Security", image: wsecBadge},
+  { title: "User & Resource Mgmt", image: wusernresourceBadge},
+  { title: "Troubleshooting", image: wtroublesBadge}
 ];
 
 const Certifications = () => (
