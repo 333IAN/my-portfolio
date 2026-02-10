@@ -68,5 +68,6 @@ def simple_email_test(request):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("check-env/", check_env_vars),  # Endpoint to check env vars
-    path("api/", include("contactapp.urls")),
+    path("contact/", include("contactapp.urls")),
+    path("api/contact/", include("contactapp.urls"))
 ]
